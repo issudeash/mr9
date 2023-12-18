@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/drawer">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="780dp"
+            app:srcCompat="@drawable/_23" />
+
+
+        <Button
+            android:id="@+id/list_button"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="120dp"
+            android:backgroundTint="@color/white"
+            android:rotation="-19"
+            android:text="장 볼 목록"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/recipe_button"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="120dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="188dp"
+            android:layout_marginStart="250dp"
+            android:rotation="11"
+            android:backgroundTint="@color/white"
+            android:text="오늘의\n추천 메뉴"
+            android:textColor="@color/black"
+            android:textSize="20dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="73dp"
+            android:layout_marginTop="110dp"
+            android:rotation="71"
+            app:srcCompat="@android:drawable/ic_media_play"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="180dp"
+            android:rotation="101"
+            app:srcCompat="@android:drawable/ic_media_play"
+            app:tint="@color/black" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/leftDrawer">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <GridLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:rowCount="4"
+            android:columnCount="1"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                >
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="왼쪽"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </GridLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/rightfbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="재료 추가"
+            android:backgroundTint="#FBAD59"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            app:icon="@android:drawable/ic_input_add"
+            app:iconTint="@color/white"
+            android:layout_gravity = "bottom|right"/>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:id="@+id/rightDrawer">
+
+        <GridLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:rowCount="4"
+            android:columnCount="1"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                >
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="오른쪽"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </GridLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/leftfbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="재료 추가"
+            app:icon="@android:drawable/ic_input_add"
+            app:iconTint="@color/white"
+            android:backgroundTint="#FBAD59"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_gravity = "bottom|right"/>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
