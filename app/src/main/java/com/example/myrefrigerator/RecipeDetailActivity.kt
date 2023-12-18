@@ -41,6 +41,8 @@ class RecipeDetailActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.rdtoolbar)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         val bundleData = intent.getBundleExtra("bundleData")
 
@@ -80,22 +82,7 @@ class RecipeDetailActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.menu_main, menu)
 
-        val menuItem = menu?.findItem(R.id.menu_item_search)
-        val searchView = menuItem?.actionView as SearchView
-
-        searchView.setOnQueryTextListener(object:SearchView.OnQueryTextListener{
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return true
-            }
-
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                Log.d("kmj", "query: $query")
-                return true
-            }
-        })
 
         return super.onCreateOptionsMenu(menu)
     }

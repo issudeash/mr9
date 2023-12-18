@@ -16,8 +16,9 @@
                 android:id="@+id/rmtoolbar"
                 android:layout_width="match_parent"
                 app:title="오늘의 점심"
-                android:backgroundTint="#FF865F"
+                app:titleMarginStart="90dp"
                 app:titleTextColor="@color/black"
+                android:background="#FBAD59"
                 android:layout_height="64dp" />
 
 

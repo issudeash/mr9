@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myrefrigerator.databinding.ActivityRecipeMainBinding
+import com.example.myrefrigerator.databinding.ItemRecyclerviewBinding
 import org.w3c.dom.Element
 import java.net.URL
 import javax.xml.parsers.DocumentBuilderFactory
@@ -26,10 +28,15 @@ class RecipeMainActivity : AppCompatActivity() {
     private val ingres = mutableListOf<String>()
     private val manuallists = mutableListOf<List<String>>()
 
+    private var searchlist = mutableListOf<String>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_main)
 
+        setSupportActionBar(findViewById(R.id.rmtoolbar))
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val thread = NetworkThread()
         thread.start()
@@ -55,22 +62,7 @@ class RecipeMainActivity : AppCompatActivity() {
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.menu_main, menu)
 
-        val menuItem = menu?.findItem(R.id.menu_item_search)
-        val searchView = menuItem?.actionView as SearchView
-
-        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return true
-            }
-
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                Log.d("kmj", "query: $query")
-                return true
-            }
-        })
 
         return super.onCreateOptionsMenu(menu)
     }
